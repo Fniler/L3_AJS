@@ -1,0 +1,66 @@
+// c
+// 2ai
+async function fetch_posts() {
+    let response = await fetch('https://jsonplaceholder.typicode.com/posts');
+    
+    let json = await response.json();
+
+    let map = json.map(el => el.title);
+
+    map = map.sort((x, y) => y.length - x.length);
+
+    console.log(map);
+
+    console.log('гатова');
+}
+fetch_posts();
+
+// 2aii
+async function fetch_comments() {
+    let response = await fetch('https://jsonplaceholder.typicode.com/comments');
+
+    let json = await response.json();
+
+    let map = json.map(el => el.name);
+
+    map = map.sort();
+
+    console.log(map);
+
+    console.log('гатова');
+}
+fetch_comments();
+
+// 2bi
+async function fetch_users() {
+    let response = await fetch('https://jsonplaceholder.typicode.com/users');
+
+    let json = await response.json();
+
+    let map = json.map(el => ({
+        id: el.id,
+        name: el.name,
+        username: el.username,
+        email: el.email,
+        phone: el.phone
+    }));
+
+    console.log(map);
+
+    console.log('гатова');
+}
+fetch_users();
+
+// 2bii
+async function fetch_todos() {
+    let response = await fetch('https://jsonplaceholder.typicode.com/todos');
+
+    let json = await response.json();
+
+    let map = json.filter(el => el.completed === false);
+
+    console.log(map);
+
+    console.log('гатова');
+}
+fetch_todos();

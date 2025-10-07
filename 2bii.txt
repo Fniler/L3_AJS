@@ -1,0 +1,9 @@
+fetch('https://jsonplaceholder.typicode.com/todos')
+
+.then(resp => resp.json())
+
+.then(arr => arr.filter(el => el.completed == false))
+
+.then(list => console.log(list));
+
+console.log('гатова')

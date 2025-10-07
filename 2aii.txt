@@ -1,0 +1,9 @@
+fetch('https://jsonplaceholder.typicode.com/comments')
+
+.then((resp) => resp.json())
+
+.then((arr) => arr.map(el => el.name))
+
+.then((list) => console.log(list.sort()));
+
+console.log('гатова');
